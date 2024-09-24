@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../HW3_CSS_Grid-main/css"
+		},
+		{
+			"path": "../HW3_CSS_Grid-main/images"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "css"
+	}
+}

@@ -12,6 +12,7 @@ body{
 
 
 .overview{
+  background-image: url("/images/header.jpg");
   background-attachment: fixed; /* Parallax effect */     
   background-position: center;  /* Parallax effect */
   background-repeat: no-repeat; /* Parallax effect */
@@ -43,7 +44,6 @@ h2{
 nav li{
   display:inline;
   padding-right:20px;
-
 }
 
 nav a{
@@ -62,11 +62,34 @@ nav a{
   z-index: 1;
 }
 
+.skip{
+  display: none;
+  position: relative;
+  top: 40px;
+}
+
+.skip:focus{
+  text-decoration: underline;
+  display: inherit;
+  position: relative;
+  bottom: 20px;
+  border: solid 2px 2px 2px 2px;
+}
 
 nav{
   background-color: #ddd;
-  padding: 25px 0; 
+  padding-top: 30px; 
+  padding-bottom: 30px;
   text-align: left;
+}
+
+nav:hover{
+  text-decoration: underline;
+}
+
+nav:focus{
+  text-decoration: underline;
+  border: solid 2px 2px 2px 2px;
 }
 
 footer{
@@ -81,7 +104,106 @@ footer{
   background-color: rgba(255, 255, 255, .8);
   border: 10px solid black;
   padding: 30px;
+  text-align: center;
 }
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-columns: 50px auto 500px auto 50px;
+  grid-template-rows: auto;
+  gap: 15px;
+}
+
+.container:first-child{
+  grid-column: span;
+  grid-column-start: 1;
+  background-image: url("/images/header.jpg");
+  background-attachment: fixed; /* Parallax effect */     
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 400px;                /* Parallax effect */
+}
+
+.about{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  position: relative;
+  z-index: 1;
+}
+
+.method{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  position: relative;
+  z-index: 1;
+}
+
+.clients{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  position: relative;
+  z-index: 1;
+}
+
+.contact{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  position: relative;
+  z-index: 1;
+}
+
+.about-image{
+  grid-column: span;
+  max-height: 600px;
+  grid-row-start: 2;
+  position: relative;
+  z-index: -1;
+  
+}
+
+.method-image{
+  grid-column: span;
+  max-height: 600px;
+  grid-row-start: 3;
+  position: relative;
+  z-index: -1;
+}
+
+.clients-image{
+  grid-column: span;
+  max-height: 600px;
+  grid-row-start: 4;
+  position: relative;
+  z-index: -1;
+}
+
+.contact-image{
+  grid-column: span;
+  max-height: 600px;
+  grid-row-start: 5;
+  position: relative;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (prefers-reduced-motion: reduce){
@@ -100,7 +222,13 @@ footer{
   }
 }
 
+link:hover{
+  text-decoration-line: underline;
+}
 
+link:focus{
+  text-decoration: underline;
+}
 
 /*Your Code Here*/
 /* PLEASE DO NOT REMOVE MY COMMENTS.  THEY HELP US HELP YOU DEBUG. */
@@ -108,7 +236,12 @@ footer{
 /* Step 1: Write selector/rule property to add an underline when
 links in the navigation are in the hover or focus state.*/
 
+/*a:hover {
+			border: 2px solid #0006CC;
+		 }
 
+     a:focus{
+  }
 
 /* Step 2a: Write selector/rule property to position the default position for the skip class element*/
 
