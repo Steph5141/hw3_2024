@@ -70,26 +70,24 @@ nav a{
 
 .skip:focus{
   text-decoration: underline;
-  display: inherit;
+  display:block;
   position: relative;
   bottom: 20px;
-  border: solid 2px 2px 2px 2px;
+  border: 2px solid #0006CC;
 }
 
 nav{
   background-color: #ddd;
-  padding-top: 30px; 
-  padding-bottom: 30px;
   text-align: left;
+}
+
+nav a:focus{
+  text-decoration: underline;
+  border: 2px solid #0006CC;
 }
 
 nav:hover{
   text-decoration: underline;
-}
-
-nav:focus{
-  text-decoration: underline;
-  border: solid 2px 2px 2px 2px;
 }
 
 footer{
@@ -104,20 +102,18 @@ footer{
   background-color: rgba(255, 255, 255, .8);
   border: 10px solid black;
   padding: 30px;
-  text-align: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .container{
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  grid-template-columns: 50px auto 500px auto 50px;
-  grid-template-rows: auto;
   gap: 15px;
 }
 
 .container:first-child{
   grid-column: span;
-  grid-column-start: 1;
   background-image: url("/images/header.jpg");
   background-attachment: fixed; /* Parallax effect */     
   background-position: center;  /* Parallax effect */
@@ -128,33 +124,33 @@ footer{
 }
 
 .about{
-  grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column: 2/span 1;
   grid-row-start: 2;
+  grid-row-end: 2;
   position: relative;
   z-index: 1;
 }
 
 .method{
-  grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column: 2/span 1;
   grid-row-start: 3;
+  grid-row-end: 3;
   position: relative;
   z-index: 1;
 }
 
 .clients{
-  grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column: 2/ span 1;
   grid-row-start: 4;
+  grid-row-end: 4;
   position: relative;
   z-index: 1;
 }
 
 .contact{
-  grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column: 2/span 1;
   grid-row-start: 5;
+  grid-row-end: 5;
   position: relative;
   z-index: 1;
 }
@@ -162,7 +158,9 @@ footer{
 .about-image{
   grid-column: span;
   max-height: 600px;
+  padding: auto;
   grid-row-start: 2;
+  grid-row-end: 2;
   position: relative;
   z-index: -1;
   
@@ -171,7 +169,9 @@ footer{
 .method-image{
   grid-column: span;
   max-height: 600px;
+  padding: auto;
   grid-row-start: 3;
+  grid-row-end: 3;
   position: relative;
   z-index: -1;
 }
@@ -179,7 +179,9 @@ footer{
 .clients-image{
   grid-column: span;
   max-height: 600px;
+  padding: auto;
   grid-row-start: 4;
+  grid-row-end: 4;
   position: relative;
   z-index: -1;
 }
@@ -187,7 +189,9 @@ footer{
 .contact-image{
   grid-column: span;
   max-height: 600px;
+  padding: auto;
   grid-row-start: 5;
+  grid-row-end: 5;
   position: relative;
   z-index: -1;
 }
@@ -197,12 +201,33 @@ footer{
 
 
 
+	
 
+@media only screen and (min-width: 800px) {
+  nav{
+    background-color: #ddd;
+    padding-top: 30px; 
+    padding-bottom: 30px;
+    text-align: right;
+  }
+  
+  .container{
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+  }
 
+  .about, .clients, .method-image, .contact-image{
+    grid-column: 3/span 2;
+  }
 
+  .method, .contact, .about-image, .clients-image{
+    grid-column: 2/span 2;
+  }
 
-
-
+  .textblock{
+    max-height: 250px;
+  }
+}
 
 
 
